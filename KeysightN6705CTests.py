@@ -1,5 +1,5 @@
 from time import sleep
-from KeysightN6705C import KeysightN6705C
+from pyVirtualLab.Instruments.KeysightN6705C import KeysightN6705C
 
 scr = KeysightN6705C("TCPIP0::k-n6705c-05944::inst0::INSTR")
 scr.Connect()

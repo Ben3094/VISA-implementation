@@ -1,6 +1,4 @@
-# import os
-# os.add_dll_directory('C:\\Program Files\\Keysight\\IO Libraries Suite\\bin')
-from KeysightMSOS804A import AddFunction, FFTMagnitudeFunction, KeysightMSOS804A
+from pyVirtualLab.Instruments.KeysightMSOS804A import AddFunction, FFTMagnitudeFunction, KeysightMSOS804A
 
 osc = KeysightMSOS804A("TCPIP0::k-msos804a-30101.ies.univ-montp2.fr::inst0::INSTR")
 print(osc)
