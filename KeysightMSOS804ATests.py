@@ -3,7 +3,7 @@ from pyVirtualLab.Instruments.KeysightMSOS804A import AddFunction, FFTMagnitudeF
 osc = KeysightMSOS804A("TCPIP0::k-msos804a-30101.ies.univ-montp2.fr::inst0::INSTR")
 print(osc)
 osc.Connect()
-osc.Functions[1].ChangeFunction(AddFunction, [osc.Channels[1], osc.Channels[2]])
+osc.Functions[1].ChangeFunction(AddFunction, [osc.AnalogChannels[1], osc.AnalogChannels[2]])
 channel1 = next((channel for channel in osc.Channels if channel.Address == 1), None)
 #
 # print(channel1.GetMaximum())
