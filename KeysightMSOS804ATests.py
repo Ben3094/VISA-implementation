@@ -4,6 +4,7 @@ osc = KeysightMSOS804A("TCPIP0::k-msos804a-30101.ies.univ-montp2.fr::inst0::INST
 print(osc)
 osc.Connect()
 osc.Functions[1].ChangeFunction(AddFunction)
+osc.Functions[1].Operand1 = osc.AnalogChannels[3]
 channel1 = next((channel for channel in osc.Channels if channel.Address == 1), None)
 #
 # print(channel1.GetMaximum())
