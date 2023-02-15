@@ -45,3 +45,11 @@ scr.IsSweepReversed = True
 print(f"Sweep{'' if scr.IsSweepReversed else ' not'} reversed")
 scr.IsSweepReversed = False
 print(f"Sweep{'' if scr.IsSweepReversed else ' not'} reversed")
+scr.IsPowerSweepEnabled = True
+print(f"Power sweep{'' if scr.IsPowerSweepEnabled else ' not'} enabled")
+scr.IsPowerSweepEnabled = False
+print(f"Power sweep{'' if scr.IsPowerSweepEnabled else ' not'} enabled")
+scr.IsFrequencySweepEnabled = True
+print(f"Frequency sweep{'' if scr.IsFrequencySweepEnabled else ' not'} enabled")
+scr.IsFrequencySweepEnabled = False
+print(f"Frequency sweep{'' if scr.IsFrequencySweepEnabled else ' not'} enabled")
