@@ -1,6 +1,7 @@
 from pyVirtualLab.Instruments.AgilentN5183B import AgilentN5183B, OutSignal, TriggerSource
 from pandas import read_csv
 from io import StringIO
+from aenum import Enum
 
 scr = AgilentN5183B('TCPIP::A-N5183B-250181.ies.univ-montp2.fr::inst0::INSTR')
 scr.Connect()
@@ -10,7 +11,7 @@ print(scr.Tigger2OutSignal)
 scr.SweepOutSignal = OutSignal.SweepEnd
 scr.Tigger1OutSignal = OutSignal.PulseVideo
 scr.Tigger2OutSignal = OutSignal.PulseVideo
-print(scr.SweepOutSignal)
+print(scr.SweepOutSi<gnal)
 print(scr.Tigger1OutSignal)
 print(scr.Tigger2OutSignal)
 
