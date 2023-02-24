@@ -1,4 +1,4 @@
-from pyVirtualLab.Instruments.AgilentN5183B import AgilentN5183B, OutSignal, TriggerSource
+from pyVirtualLab.Instruments.AgilentN5183B import AgilentN5183B, OutSignal, TriggerSource, PulseType
 from pandas import read_csv
 from io import StringIO
 from aenum import Enum
@@ -11,7 +11,7 @@ print(scr.Tigger2OutSignal)
 scr.SweepOutSignal = OutSignal.SweepEnd
 scr.Tigger1OutSignal = OutSignal.PulseVideo
 scr.Tigger2OutSignal = OutSignal.PulseVideo
-print(scr.SweepOutSi<gnal)
+print(scr.SweepOutSignal)
 print(scr.Tigger1OutSignal)
 print(scr.Tigger2OutSignal)
 
@@ -54,3 +54,20 @@ scr.IsFrequencySweepEnabled = True
 print(f"Frequency sweep{'' if scr.IsFrequencySweepEnabled else ' not'} enabled")
 scr.IsFrequencySweepEnabled = False
 print(f"Frequency sweep{'' if scr.IsFrequencySweepEnabled else ' not'} enabled")
+
+scr.IsPulseEnabled = False
+for pulseType in PulseType:
+    scr.SetPulseType = pulseType
+    try:
+        scr.PulseDelay = 1
+    except Exception as e:
+        print(e)
+    try:
+        scr.PulsePeriod = 2
+    except Exception as e:
+        print(e)
+    try:
+        scr.PulseWidth = 1
+    except Exception as e:
+        print(e)
+scr.IsPulseEnabled = True
