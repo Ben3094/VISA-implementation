@@ -1,10 +1,10 @@
 from pyVirtualLab.Instruments.AgilentN5183B import AgilentN5183B, OutSignal, TriggerSource, PulseType
 from pandas import read_csv
 from io import StringIO
-from aenum import Enum
 
 scr = AgilentN5183B('TCPIP::A-N5183B-250181.ies.univ-montp2.fr::inst0::INSTR')
 scr.Connect()
+
 print(scr.SweepOutSignal)
 print(scr.Tigger1OutSignal)
 print(scr.Tigger2OutSignal)
@@ -57,17 +57,17 @@ print(f"Frequency sweep{'' if scr.IsFrequencySweepEnabled else ' not'} enabled")
 
 scr.IsPulseEnabled = False
 for pulseType in PulseType:
-    scr.SetPulseType = pulseType
-    try:
-        scr.PulseDelay = 1
-    except Exception as e:
-        print(e)
-    try:
-        scr.PulsePeriod = 2
-    except Exception as e:
-        print(e)
-    try:
-        scr.PulseWidth = 1
-    except Exception as e:
-        print(e)
+	scr.SetPulseType = pulseType
+	try:
+		scr.PulseDelay = 1
+	except Exception as e:
+		print(e)
+	try:
+		scr.PulsePeriod = 2
+	except Exception as e:
+		print(e)
+	try:
+		scr.PulseWidth = 1
+	except Exception as e:
+		print(e)
 scr.IsPulseEnabled = True
