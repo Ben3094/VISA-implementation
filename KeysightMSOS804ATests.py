@@ -5,7 +5,11 @@ print(osc)
 osc.Connect()
 osc.Functions[1].ChangeFunction(AddFunction)
 osc.Functions[1].Operand1 = osc.AnalogChannels[3]
-channel1 = next((channel for channel in osc.Channels if channel.Address == 1), None)
+channel1 = osc.AnalogChannels[1]
+channel1.Offset = 1
+channel1.Scale = 0.5
+osc.TimeScale = 0.005
+print(channel1.GetRMS())
 # print(channel1.GetMaximum())
 # print(channel1.GetMinimum())
 # print(channel1.GetAverage())
@@ -14,4 +18,3 @@ channel1 = next((channel for channel in osc.Channels if channel.Address == 1), N
 # print(channel1.GetPeriod())
 # print(channel1.GetRiseTime())
 # print(osc.GetAnalogData())
-print(channel1.GetFFTPeaksMagnitudes())
