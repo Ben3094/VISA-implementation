@@ -1,4 +1,5 @@
-from pyVirtualLab.Instruments.KeysightMSOS804A import AddFunction, FFTMagnitudeFunction, KeysightMSOS804A, SubtractFunction
+from pyVirtualLab.Instruments.KeysightMSOS804A.KeysightMSOS804A import KeysightMSOS804A
+from pyVirtualLab.Instruments.KeysightMSOS804A.Functions import AddFunction, SubtractFunction
 
 osc = KeysightMSOS804A("TCPIP0::k-msos804a-30101.ies.univ-montp2.fr::inst0::INSTR")
 print(osc)
