@@ -1,12 +1,12 @@
 from pyVirtualLab.Instruments.KeysightMSOS804A.KeysightMSOS804A import KeysightMSOS804A
-from pyVirtualLab.Instruments.KeysightMSOS804A.Functions import AddFunction, SubtractFunction
+from pyVirtualLab.Instruments.KeysightMSOS804A.Functions import *
 
 osc = KeysightMSOS804A("TCPIP0::k-msos804a-30101.ies.univ-montp2.fr::inst0::INSTR")
 print(osc)
 osc.Connect()
 osc.AnalogChannels[1].IsEnabled = True
-osc.Functions[1].ChangeFunction(AddFunction)
-osc.Functions[1].Operand1 = osc.AnalogChannels[3]
+osc.Functions[1].ChangeFunction(HighPassFunction)
+osc.Functions[1].Bandwidth = 5e6
 osc.WaveformMemoryChannels[1].Save(osc.AnalogChannels[1])
 osc.WaveformMemoryChannels[1].IsEnabled = True
 subtractFunction:SubtractFunction = osc.Functions[2]
