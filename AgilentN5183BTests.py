@@ -6,14 +6,14 @@ scr = AgilentN5183B('TCPIP::A-N5183B-250181.ies.univ-montp2.fr::inst0::INSTR')
 scr.Connect()
 
 print(scr.SweepOutSignal)
-print(scr.Tigger1OutSignal)
-print(scr.Tigger2OutSignal)
+print(scr.Trigger1OutSignal)
+print(scr.Trigger2OutSignal)
 scr.SweepOutSignal = OutSignal.SweepEnd
-scr.Tigger1OutSignal = OutSignal.PulseVideo
-scr.Tigger2OutSignal = OutSignal.PulseVideo
+scr.Trigger1OutSignal = OutSignal.PulseVideo
+scr.Trigger2OutSignal = OutSignal.PulseVideo
 print(scr.SweepOutSignal)
-print(scr.Tigger1OutSignal)
-print(scr.Tigger2OutSignal)
+print(scr.Trigger1OutSignal)
+print(scr.Trigger2OutSignal)
 
 scr.IsLowFrequencyOutputEnabled = False
 print(scr.IsLowFrequencyOutputEnabled)
