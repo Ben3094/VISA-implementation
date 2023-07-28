@@ -57,7 +57,7 @@ print(f"Frequency sweep{'' if scr.IsFrequencySweepEnabled else ' not'} enabled")
 
 scr.IsPulseEnabled = False
 for pulseType in PulseType:
-	scr.SetPulseType = pulseType
+	scr.PulseTypeSet = pulseType
 	try:
 		scr.PulseDelay = 1
 	except Exception as e:
