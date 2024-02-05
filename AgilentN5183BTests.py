@@ -1,4 +1,4 @@
-from pyVirtualLab.Instruments.AgilentN5183B import AgilentN5183B, OutSignal, TriggerSource, PulseType
+from pyVirtualLab.Instruments.AgilentN5183B.AgilentN5183B import AgilentN5183B, OutSignal, TriggerSource, PulseType
 from pandas import read_csv
 from io import StringIO
 
