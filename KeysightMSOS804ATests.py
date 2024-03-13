@@ -2,7 +2,6 @@ from pyVirtualLab.Instruments.KeysightMSOS804A.KeysightMSOS804A import KeysightM
 from pyVirtualLab.Instruments.KeysightMSOS804A.Functions import *
 
 osc = KeysightMSOS804A("TCPIP0::k-msos804a-30101.ies.univ-montp2.fr::inst0::INSTR")
-print(osc)
 osc.Connect()
 osc.AnalogChannels[1].IsEnabled = True
 osc.Functions[1].ChangeFunction(HighPassFunction)
